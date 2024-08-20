@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="shortcut icon" href="images/banner/Logo.png" type="image/x-icon">
+
+    
+    <link rel="stylesheet" href="css/fonts.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- owl carousal -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .swiper-pagination-bullet {
+            display: inline-block;
+            width: 15px;
+            height: 30px;
+            background-image: url('./images/banner/Diamond\ Icon\ white.png');
+            background-repeat: no-repeat;
+            background-size: fit;
+            background-color: transparent;
+            border-radius: 0;
+        }
+        .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+            bottom:  var(--swiper-pagination-bottom,-15px);
+        }
+        .header.fixed_header{
+            background-image: url('./images/banner/Navigation\ Bar.jpg');
+        }
+        .swiper-button-next , .swiper-button-prev {
+            color: white;
+        }
+        .swiper-button-next, .swiper-button-prev{
+            width: 45px !important;
+            height: 45px !important;
+        }
+        .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after, .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+            content: '';
+            width: 45px !important;
+            height: 45px !important;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+            background-image: url('../dist/images/banner/left-arrow.svg');
+        }
+        .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+            background-image: url('../dist/images/banner/right-arrow.svg');
+        }
+    </style>
+</head>
+
+<body class="bg-[#232323]">
+    <!-- loader -->
+    <!-- <div class="loader-warper w-full h-screen fixed overflow-y-hidden bg-black z-[9999] flex items-center justify-center" id="loader-wrapp">
+        <div class="loader animate-pulse bg-no-repeat w-[105px] h-[110px]" style="background-image: url('./images/loader/logo.png');">
+        </div>
+    </div> -->
+    <!-- header------------------------------------------- -->
+    <header>
+        <div class="header z-[999] top-0 py-3 left-0 w-full fixed">
+            <div class="container mx-auto relative">
+                <div class="flex">
+                    <div class="flex flex-wrap justify-between w-full">
+                        <ul class="lg:flex hidden  flex-wrap items-center text-[#F6F6F6] capitalize font-sans">
+                            <!-- Home -->
+                            <li class="flex items-center px-3 relative group">
+                                <a href="#" class="hover:text-[#A5886D] duration-300">Home</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                                <div
+                                    class="dropdown absolute top-10 left-0 bg-white min-w-40 text-[#232323] py-2 px-5 drop-shadow-xl delay-75 ease-out duration-300 rounded-lg invisible opacity-0 group-hover:opacity-100 group-hover:visible">
+                                    <ul>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="#" class="">Home-01</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="#">Home-02</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="#">Home-03</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="#">Home-04</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="px-2">
+                                <img src="images/banner/Diamond Icon.png" alt="img">
+                            </li>
+                            <!-- About -->
+                            <li class="flex items-center px-3 relative group">
+                                <a href="#" class="hover:text-[#A5886D] duration-300">About</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                                <div
+                                    class="dropdown absolute top-10 left-0 bg-white min-w-40 text-[#232323] py-2 px-5 drop-shadow-xl delay-75 ease-out duration-300 rounded-lg invisible opacity-0 group-hover:opacity-100 group-hover:visible">
+                                    <ul>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/about.ejs">About Us</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/news.ejs">News</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/news_details.ejs">News Details</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="px-2">
+                                <img src="images/banner/Diamond Icon.png" alt="img">
+                            </li>
+                            <!-- Menus -->
+                            <li class="flex items-center px-3 relative group">
+                                <a href="#" class="hover:text-[#A5886D] duration-300">Menus</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                                <div
+                                    class="dropdown absolute top-10 left-0 bg-white min-w-40 text-[#232323] py-2 px-5 drop-shadow-xl delay-75 ease-out duration-300 rounded-lg invisible opacity-0 group-hover:opacity-100 group-hover:visible">
+                                    <ul>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="#">Menu list</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="#">Menu tab</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="#">Special Menu</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="logo">
+                            <a href="#">
+                                <img src="images/banner/Logo.png" alt="logo">
+                            </a>
+                        </div>
+                        <ul class="lg:flex hidden  flex-wrap items-center text-[#F6F6F6] capitalize font-sans">
+                            <!-- Pages -->
+                            <li class="flex items-center px-3 relative group">
+                                <a href="#" class="hover:text-[#A5886D] duration-300">Pages</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                                <div
+                                    class="dropdown absolute top-10 left-0 bg-white min-w-40 text-[#232323] py-2 px-5 drop-shadow-xl delay-75 ease-out duration-300 rounded-lg invisible opacity-0 group-hover:opacity-100 group-hover:visible">
+                                    <ul>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/chefs.ejs">Chef</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/gallery.ejs">Gallery</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/Testimonials .ejs">Testimonials</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/Testimonials_2.ejs">Testimonials 2</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/contact.ejs">Contact</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/Reservations.ejs">Reservations</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/coming_soon.ejs">Coming Soon</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/404.ejs">404 ERROR</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="px-2">
+                                <img src="images/banner/Diamond Icon.png" alt="img">
+                            </li>
+                            <!-- Shop -->
+                            <li class="flex items-center px-3 relative group">
+                                <a href="#" class="hover:text-[#A5886D] duration-300">Shop</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                                <div
+                                    class="dropdown absolute top-10 left-0 bg-white min-w-40 text-[#232323] py-2 px-5 drop-shadow-xl delay-75 ease-out duration-300 rounded-lg invisible opacity-0 group-hover:opacity-100 group-hover:visible">
+                                    <ul>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/shop.ejs">Shop</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/shop_product.ejs">Shop Product</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/cart.ejs">Cart</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/empty_cart.ejs">Empty Cart</a>
+                                        </li>
+                                        <li class="pt-1 hover:translate-x-2 duration-500">
+                                            <a href="./page/CheckOut.ejs">Checkout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="px-2">
+                                <img src="images/banner/Diamond Icon.png" alt="img">
+                            </li>
+                            <!-- Contact -->
+                            <li class="flex items-center px-3 relative group">
+                                <a href="./page/contact.ejs" class="hover:text-[#A5886D] duration-300">Contact</a>
+
+                            </li>
+                        </ul>
+                        <div class="lg:hidden hamburger_menu text-white flex items-center justify-center mr-10"> >
+                        </div>
+                        <div class="text-white hidden  menu absolute top-0 right-1/2">
+                            <ul>
+                                <li><a href="#" class="hover:text-[#A5886D] duration-300">Home</a></li>
+                                <li><a href="#" class="hover:text-[#A5886D] duration-300">About</a></li>
+                                <li><a href="#" class="hover:text-[#A5886D] duration-300">Menus</a></li>
+                                <li><a href="#" class="hover:text-[#A5886D] duration-300">Pages</a></li>
+                                <li><a href="#" class="hover:text-[#A5886D] duration-300">Shop</a></li>
+                                <li><a href="#" class="hover:text-[#A5886D] duration-300">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!--  banner -->
+        <section id="banner">
+            <div class="">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="h-[900px] bg-center bg-cover bg-no-repeat"
+                                style="background-image: url('./images/banner/banner_1.jpg');">
+                                <div class="h-full flex flex-wrap justify-center items-center">
+                                    <div class="text-center">
+                                        <h1 class="text-[#D9D9D9] text-8xl font-serif mb-3" data-aos="fade-right" data-aos-duration="200" >Savor Extraordinary Moments</h1>
+                                        <p class="text-[#C3AF9D] text-4xl font-semibold font-sans mb-12" data-aos="fade-left" data-aos-duration="800">“Where Culinary Dreams Unfold"</p>
+                                        <button class="bg-gradient-to-b from-[#6F4F37] to-[#AB9D91] rounded-ee-full rounded-ss-full text-white px-12 py-2 font-sans"data-aos="zoom-in"data-aos-duration="1200">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="h-[900px] bg-center bg-cover bg-no-repeat"
+                                style="background-image: url('./images/banner/banner_2.jpg');">
+                                <div class="h-full flex flex-wrap justify-center items-center">
+                                    <div class="text-center">
+                                        <h1 class="text-[#D9D9D9] text-8xl font-serif mb-3"data-aos="fade-right"data-aos-duration="200">Savor Extraordinary Moments</h1>
+                                        <p class="text-[#C3AF9D] text-4xl font-sans mb-7"data-aos="fade-left"data-aos-duration="800">“Where Culinary Dreams Unfold"</p>
+                                        <button class="bg-gradient-to-b from-[#6F4F37] to-[#AB9D91] duration-300 rounded-ee-full rounded-ss-full text-white px-8 py-2 font-sans"data-aos="zoom-in"data-aos-duration="1200">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="h-[900px] bg-center bg-cover bg-no-repeat"
+                                style="background-image: url('./images/banner/banner_3.jpg');">
+                                <div class="h-full flex flex-wrap justify-center items-center">
+                                    <div class="text-center">
+                                        <h1 class="text-[#D9D9D9] text-8xl font-serif mb-3"data-aos="fade-right"data-aos-duration="200">Elevating Gastronomy</h1>
+                                        <p class="text-[#C3AF9D] text-4xl font-sans mb-7"data-aos="fade-left"data-aos-duration="800">“Where Master Chefs Create Culinary Art"</p>
+                                            <button class="bg-gradient-to-b from-[#6F4F37] to-[#AB9D91] duration-300 rounded-ee-full rounded-ss-full text-white px-8 py-2 font-sans"data-aos="zoom-in"data-aos-duration="1200">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next">
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- about us -->
+        <section class="bg-[#232323] py-24">
+            <div class="container mx-auto">
+                <div class="bg-[#353535] p-3 flex flex-wrap justify-center  relative">
+                    <div class="w-10/12 lg:w-6/12 flex flex-wrap">
+                        <div class="w-6/12 my-3 flex items-center text-[#A5886D]"data-aos="fade-right"data-aos-duration="1200">
+                            <img src="images/banner/system-uicons_diamond.png" alt="icon">
+                            <span class="mx-2">Culinary Mastery</span>
+                        </div>
+                        <div class="w-6/12 my-3 flex items-center text-[#A5886D]"data-aos="fade-left"data-aos-duration="1500">
+                            <img src="images/banner/game-icons_knife-fork.png" alt="icon">
+                            <span class="mx-2">Sommelier Expertise</span>
+                        </div>
+                        <div class="w-6/12 my-3 flex items-center text-[#A5886D]"data-aos="fade-right"data-aos-duration="1700">
+                            <img src="images/banner/ph_wine-fill.png" alt="icon">
+                            <span class="mx-2">Fine Dining Etiquette</span>
+                        </div>
+                        <div class="w-6/12 my-3 flex items-center text-[#A5886D]"data-aos="fade-left"data-aos-duration="1900">
+                            <img src="images/banner/ph_star-bold.png" alt="icon">
+                            <span class="mx-2">Fine Interior Design</span>
+                        </div>
+                    </div>
+                    <div class="lg:w-4/12 xl:w-3/12 relative hidden lg:block z-[1]"data-aos="zoom-in" data-aos-duration="1500">
+                        <div class="absolute bottom-0 left-0-0 z-50 w-full">
+                            <div class=" p-3 border-2 border-[#A5886D]">
+                                <div class="bg-[#A5886D] text-white p-5 ">
+                                    <h2 class="text-center mb-3 text-2xl font-sans">Opening Hours</h2>
+
+                                    <ul>
+                                        <li class="flex justify-between border-b pb-1 text-xl border-dotted mb-3">
+                                            <span>Monday</span>
+                                            <span>10am - 10pm</span>
+                                        </li>
+                                        <li class="flex justify-between border-b pb-1 text-xl border-dotted mb-3">
+                                            <span>Tuesday</span>
+                                            <span>10am - 10pm</span>
+                                        </li>
+                                        <li class="flex justify-between border-b pb-1 text-xl border-dotted mb-3">
+                                            <span>Wednesday</span>
+                                            <span>10am - 10pm</span>
+                                        </li>
+                                        <li class="flex justify-between border-b pb-1 text-xl border-dotted mb-3">
+                                            <span>Thursday</span>
+                                            <span>10am - 10pm</span>
+                                        </li>
+                                        <li class="flex justify-between border-b pb-1 text-xl border-dotted mb-3">
+                                            <span>Friday</span>
+                                            <span>10am - 11pm</span>
+                                        </li>
+                                        <li class="flex justify-between border-b pb-1 text-xl border-dotted mb-3">
+                                            <span>Saturday</span>
+                                            <span>10am - 11pm</span>
+                                        </li>
+                                        <li class="flex justify-between border-b pb-1 text-xl border-dotted mb-3">
+                                            <span>Sunday</span>
+                                            <span>11am - 9pm</span>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-around pt-24 relative">
+                    <div class="hidden lg:block w-3/12"data-aos="fade-right"data-aos-duration="500">
+                        <div class="absolute w-full h-full -top-8 left-8">
+                            <div class="w-full h-full border-4 border-[#A5886D] z-[0]"></div>
+                        </div>
+                        <img src="images/banner/about.jpg" alt="img" class="z-[1] relative">
+                    </div>
+                    <div class="w-full lg:w-5/12"data-aos="fade-left"data-aos-duration="800">
+                        <h2 class="text-[#A5886D] text-3xl font-sans mb-3">The Epitome of Luxury</h2>
+                        <img src="images/banner/Heading Underline.png" alt="img" class="mb-3">
+                        <p class="text-white text-xl mb-6">Beyond its gastronomic pflexess, <span
+                                class="text-[#A5886D]">Renaissance</span> has always
+                            been synonymous with luxury. The restaurant's ambiance,
+                            adorned with lavish décor and impeccable attention to detail,
+                            creates an atmosphere of grandeur that transports guests to
+                            a world of sophistication and refinement.</p>
+                        <h6 class="font-mono text-5xl text-[#A5886D]">Uriel Guimarães</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- A Cinematic Feast for the Senses -->
+        <section class="w-full h-[600px] bg-cover bg-no-repeat bg-bottom flex flex-wrap justify-between items-center"
+            style="background-image: url('./images/banner/Watch\ Our\ Video\ Section.jpg');">
+            <div class="container mx-auto">
+                <div class="flex justify-center">
+                    <div class="text-center">
+                        <h3 class="font-sans text-white text-5xl font-semibold mb-5"data-aos="zoom-in"data-aos-duration="1000">A Cinematic Feast for the Senses</h3>
+                        <div
+                            class="border-2 border-white flex justify-center items-center w-32 h-32 rounded-full p-9 mx-auto scale-110 duration-500"data-aos="zoom-in"data-aos-duration="1300">
+                            <a href="https://www.youtube.com/watch?v=WdWEMXnHBVI">
+                                <img src="./images/banner/Vector.png" alt="img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- menu -->
+        <section
+            class="mt-14 w-full h-[500px] bg-cover bg-no-repeat bg-center flex flex-wrap justify-between items-center"
+            style="background-image: url('./images/banner/View\ Our\ Menu\ Section.jpg');">
+            <div class="container mx-auto">
+                <div class="flex">
+                    <div class="w-full text-center">
+                        <h2 class="text-[#A5886D] md:text-4xl text-3xl font-sans mb-4"data-aos="zoom-in"data-aos-duration="400">Discover the Delights of Our
+                            Restaurant Menu</h2>
+                        <img src="images/banner/Heading Underline2.png" alt="img" class="mb-7 mx-auto"data-aos="zoom-in"data-aos-duration="400">
+                        <p class="text-white md:text-2xl text-xl mb-6"data-aos="zoom-in"data-aos-duration="700">Dear food enthusiast, it's time to immerse
+                            yourself in the culinary marvels that our restaurant menu has to offer. Each page unveils a
+                            new chapter of epicurean delight, waiting to be explored and relished. Come join us, and let
+                            the symphony of flavors dance upon your palate, leaving you with a profound appreciation for
+                            the art of gastronomy.</p>
+                        <button
+                            class="bg-gradient-to-b from-[#6F4F37] to-[#AB9D91] rounded-ee-full rounded-ss-full text-white px-8 py-2 font-sans"data-aos="flip-left"data-aos-duration="1000">View
+                            Our Menu</button>
+                    </div>
+                </div>
+        </section>
+
+
+        <!-- Meet Our Chefs -->
+        <section class="py-24">
+            <div class="container mx-auto">
+                <div class="flex">
+                    <div class="w-full text-center mb-3">
+                        <h2 class="text-[#A5886D] md:text-4xl text-3xl font-sans mb-4"data-aos="zoom-in"data-aos-duration="1000">Meet Our Chefs</h2>
+                        <img src="images/banner/Heading Underline2.png" alt="img" class="mb-7 mx-auto"data-aos="zoom-in"data-aos-duration="1000">
+                        <p class="text-white text-xl md:text-2xl mb-6"data-aos="zoom-in"data-aos-duration="1300">We take immense pride in announcing that the
+                            talented French chefs gracing our restaurant have been honored with prestigious culinary
+                            accolades, solidifying their status as true masters of their craft. Prepare to embark on a
+                            culinary adventure like no other, guided by these extraordinary gastronomic visionaries who
+                            have been recognized for their remarkable talents and unwavering dedication to their art.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap mt-5 justify-around">
+                    <div class=" md:w-3/12 lg:mb-20 mx-auto relative">
+                        <div class="mx-auto"data-aos="flip-left"data-aos-duration="1600">
+                            <div class=" absolute w-full h-full -bottom-10 left-11">
+                                <div class="w-full h-full border-[11px] border-[#A5886F] z-[0]"></div>
+                            </div>
+                            <img src="images/banner/chef1.png" alt="img" class="z-[1] relative">
+                            <div class="chef_name absolute bottom-8 left-52 z-10">
+                                <div class="bg-[#A5886F] px-4 py-2 text-white">Chef Jean-Pierre</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-3/12 mx-auto">
+                        <div class="mx-auto relative"data-aos="flip-right"data-aos-duration="2000">
+                            <div class=" absolute w-full h-full -bottom-10 -left-11">
+                                <div class="w-full h-full border-[11px] border-[#A5886F] z-[0]"></div>
+                            </div>
+                            <img src="images/banner/chef2.png" alt="img" class="z-[1] relative">
+                            <div class="chef_name absolute bottom-8 left-48 z-10">
+                                <div class="bg-[#A5886F] px-4 py-2 text-white">Chef Olivier Dupont</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Follow on Instagram -->
+
+        <section class="pb-24">
+            <div class="container mx-auto">
+                <div class="flex flex-wrap">
+                    <div class="w-full text-center"data-aos="fade-down"data-aos-duration="500">
+                        <h2 class="text-[#A5886D] text-4xl font-sans mb-4">Follow on Instagram</h2>
+                        <img src="images/banner/Heading Underline2.png" alt="img" class="mb-7 mx-auto">
+                    </div>
+                    <div class="flex flex-wrap w-8/12 mx-auto">
+                        <div class="w-full md:w-6/12 lg:w-4/12 p-2">
+                            <div class="bg-cover w-full h-full relative group duration-500 flex justify-center items-center " style="background-image: url('images/banner/Image 1.png'); "data-aos="zoom-in"data-aos-duration="700">
+                                <!-- <div class="group-hover:block absolute hidden duration-500 ">
+                                    <div class="bg-white w-10 h-10 rounded-full flex justify-center items-center ">
+                                        <a href="https://www.instagram.com/">></a>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <!-- <img src="images/banner/Image 1.jpg" alt="img" class="w-full"> -->
+                        </div>
+                        <div class="w-full md:w-6/12 lg:w-4/12 p-2">
+                            <img src="images/banner/Image 2.png" alt="img" class="w-full"data-aos="zoom-in"data-aos-duration="1000">
+                        </div>
+                        <div class="w-full md:w-6/12 lg:w-4/12 p-2">
+                            <img src="images/banner/Image 3.png" alt="img" class="w-full"data-aos="zoom-in"data-aos-duration="1300">
+                        </div>
+                        <div class="w-full md:w-6/12 lg:w-4/12 p-2">
+                            <img src="images/banner/Image 4.png" alt="img" class="w-full"data-aos="zoom-in"data-aos-duration="1500">
+                        </div>
+                        <div class="w-full md:w-6/12 lg:w-4/12 p-2">
+                            <img src="images/banner/Image 5.png" alt="img" class="w-full"data-aos="zoom-in"data-aos-duration="1700">
+                        </div>
+                        <div class="w-full md:w-6/12 lg:w-4/12 p-2">
+                            <img src="images/banner/Image 6.png" alt="img" class="w-full"data-aos="zoom-in"data-aos-duration="2000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Feedback -->
+        <section>
+            <div class="flex flex-wrap">
+                <div class=" w-full lg:w-8/12 bg-cover bg-no-repeat py-24"
+                    style="background-image: url('./images/banner/feedback\ Left\ BG.png');">
+                    <div class="">
+                        <div class="w-full text-center"data-aos="fade-up"data-aos-duration="500">
+                            <h2 class="text-[#A5886D] text-4xl font-sans mb-4">Client Feedback</h2>
+                            <img src="images/banner/Heading Underline2.png" alt="img" class="mb-7 mx-auto">
+                            <p class="text-white text-xl mb-6"data-aos="zoom-in"data-aos-duration="700">In the realm of fine dining, trust is an invaluable
+                                currency, and we are humbled by the unwavering trust bestowed upon us by our esteemed
+                                guests.</p>
+                        </div>
+                        <div class="w-8/12 mx-auto">
+                            <div class="feed_back bg-cover bg-no-repeat p-5 border-8 border-[#a5886d]"
+                                style="background-image: url(./images/pages/Feedback\ Box.png);">
+                                <div class="swiper mySwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"data-aos="zoom-in"data-aos-duration="700">
+                                            <div class="mb-8">
+                                                <img src="images/banner/bxs_quote-alt-right.png" alt="img"
+                                                    class="mx-auto mb-3">
+                                                <p class="text-white text-xs mb-6 text-center">I had the immense
+                                                    pleasure of indulging in a dining experience at your esteemed luxury
+                                                    restaurant, and I am compelled to express my deepest gratitude and
+                                                    admiration for the extraordinary journey I embarked upon. From the
+                                                    moment I stepped into the opulent surroundings, I knew I was in for
+                                                    an exceptional treat.</p>
+                                                <h6 class="text-center text-[#A5886D] mb-10">Alexander Thompson - Customer
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide"data-aos="zoom-in"data-aos-duration="700">
+                                            <div class="mb-8">
+                                                <img src="images/banner/bxs_quote-alt-right.png" alt="img"
+                                                    class="mx-auto mb-3">
+                                                <p class="text-white text-xs mb-6 text-center">I had the immense
+                                                    pleasure of indulging in a dining experience at your esteemed luxury
+                                                    restaurant, and I am compelled to express my deepest gratitude and
+                                                    admiration for the extraordinary journey I embarked upon. From the
+                                                    moment I stepped into the opulent surroundings, I knew I was in for
+                                                    an exceptional treat.</p>
+                                                <h6 class="text-center text-[#A5886D]">Alexander Thompson - Customer
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide"data-aos="zoom-in"data-aos-duration="700">
+                                            <div class="mb-8">
+                                                <img src="images/banner/bxs_quote-alt-right.png" alt="img"
+                                                    class="mx-auto mb-3">
+                                                <p class="text-white text-xs mb-6 text-center">I had the immense
+                                                    pleasure of indulging in a dining experience at your esteemed luxury
+                                                    restaurant, and I am compelled to express my deepest gratitude and
+                                                    admiration for the extraordinary journey I embarked upon. From the
+                                                    moment I stepped into the opulent surroundings, I knew I was in for
+                                                    an exceptional treat.</p>
+                                                <h6 class="text-center text-[#A5886D]">Alexander Thompson - Customer
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:block hidden w-4/12">
+                    <div class="bg-cover bg-no-repeat w-full h-full"
+                        style="background-image: url('./images/banner/feedback Right BG.png');"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dress Code Etiquette -->
+        <section class="py-24">
+            <div class="container mx-auto">
+                <div class="text-center">
+                    <div class="mb-10">
+                        <h2 class="text-[#A5886D] text-4xl font-sans mb-4"data-aos="fade-up"data-aos-duration="500">Dress Code Etiquette</h2>
+                        <img src="images/banner/Heading Underline2.png" alt="img" class="mb-7 mx-auto"data-aos="fade-up"data-aos-duration="500">
+                        <p class="text-white text-lg md:text-xl mb-6"data-aos="zoom-in"data-aos-duration="800">At our esteemed luxury restaurant, we aim to
+                            maintain a refined and sophisticated ambiance that complements the exquisite dining
+                            experience we offer. To maintain our standard, check out some of our dress code
+                            recommendations below.</p>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="w-full mb-5 md:w-4/12"data-aos="zoom-in"data-aos-duration="1000">
+                            <img src="images/banner/ph_star-fill.png" alt="img" class="mx-auto mb-4">
+                            <h5 class="text-white text-xl">Elegant Attire Appreciated</h5>
+                        </div>
+                        <div class="w-full mb-5 md:w-4/12"data-aos="zoom-in"data-aos-duration="1000">
+                            <img src="images/banner/ph_star-half-fill.png" alt="img" class="mx-auto mb-4">
+                            <h5 class="text-white text-xl">Smart Casual is the Standard</h5>
+                        </div>
+                        <div class="w-full mb-5 md:w-4/12"data-aos="zoom-in"data-aos-duration="1000">
+                            <img src="images/banner/fluent_star-off-16-filled.png" alt="img" class="mx-auto mb-4">
+                            <h5 class="text-white text-xl">Avoid Casual and Athletic Wear</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservations -->
+        <section>
+            <div class="flex flex-wrap">
+                <div class="lg:block hidden w-4/12">
+                    <div class="bg-cover bg-no-repeat w-full h-full"
+                        style="background-image: url('images/banner/reservation Left Box.png');"></div>
+                </div>
+                <div class=" w-full lg:w-8/12 bg-cover bg-no-repeat py-24"
+                    style="background-image: url('./images/banner/reservation\ Right\ Box.png');">
+                    <div class="text-center">
+                        <h2 class="text-[#A5886D] text-4xl font-sans mb-4"data-aos="fade-down"data-aos-duration="800">Reservations</h2>
+                        <img src="images/banner/Heading Underline2.png" alt="img" class="mb-7 mx-auto"data-aos="fade-down"data-aos-duration="800">
+                        <ul>
+                            <li class="text-white text-xl mb-5"data-aos="fade-down"data-aos-duration="1000">
+                                <a href="#">12 Rue de la Fontaine, Vannes, 56000, France </a>
+                            </li>
+                            <li class="text-white text-xl mb-7"data-aos="fade-down"data-aos-duration="1200">
+                                <a href="#">+91-88490-94711</a>
+                            </li>
+                            <li class="text-white text-xl mb-7"data-aos="fade-down"data-aos-duration="1500">
+                                <a href="#">reservations@restaurant.com</a>
+                            </li>
+                        </ul>
+                        <button
+                            class="bg-gradient-to-b from-[#6F4F37] to-[#AB9D91] rounded-ee-full rounded-ss-full text-white px-8 py-2 font-sans uppercase"data-aos="zoom-in"data-aos-duration="2000">book
+                            a table</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Latest News -->
+        <section class="py-24 ">
+            <div class="container mx-auto">
+                <div class=" text-center">
+                    <h2 class="text-[#A5886D] text-4xl font-sans mb-5 aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">Latest News</h2>
+                    <img src="images/banner/Heading Underline2.png" alt="img" class="mb-7 mx-auto aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                </div>
+                <div class="flex flex-wrap justify-between mt-16 gap-3">
+                    <div class="w-full mb-5 md:w-4/12 lg:w-3/12 mx-auto px-3"data-aos="zoom-in"data-aos-duration="800">
+                        <div class="border-4 border-[#A5886D] relative ">
+                            <div class="absolute w-full h-full -top-6 left-6">
+                                <div class="w-full h-full border-4 border-[#A5886D] z-[0]"></div>
+                            </div>
+                            <div class="absolute top-2 right-2 z-[2]">
+                                <div class="px-4 py-1 bg-[#A5886D] text-white">Events</div>
+                            </div>
+                            <div class="news_img">
+                                <img src="images/banner/news1.png" alt="img" class="z-[1] relative w-full">
+                            </div>
+                            <div class="new_content relative z-[1]">
+                                <div class="p-4 text-center bg-[#232323]">
+                                    <span class="text-white ">July 26, 2023</span>
+                                    <h4 class="text-[#C3AF9D] my-3 font-medium">Explore Blissful Moments at Renaissance
+                                    </h4>
+                                    <button
+                                        class="bg-gradient-to-b from-[#6F4F37] to-[#AB9D91] rounded-ee-full rounded-ss-full text-white px-8 py-2 font-sans capitalize">Read
+                                        More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full mb-5 md:w-4/12 lg:w-3/12 mx-auto px-3"data-aos="zoom-in"data-aos-duration="800">
+                        <div class="border-4 border-[#A5886D] relative ">
+                            <div class="absolute w-full h-full -top-6 left-6">
+                                <div class="w-full h-full border-4 border-[#A5886D] z-[0]"></div>
+                            </div>
+                            <div class="absolute top-2 right-2 z-[2]">
+                                <div class="px-4 py-1 bg-[#A5886D] text-white">Events</div>
+                            </div>
+                            <div class="news_img">
+                                <img src="images/banner/news2.png" alt="img" class="z-[1] relative w-full">
+                            </div>
+                            <div class="new_content relative z-[1]">
+                                <div class="p-4 text-center bg-[#232323]">
+                                    <span class="text-white ">July 11, 2023</span>
+                                    <h4 class="text-[#C3AF9D] my-3 font-medium">The Unparalleled Happy Hour Experience
+                                    </h4>
+                                    <button
+                                        class="bg-gradient-to-b from-[#6F4F37] to-[#AB9D91] rounded-ee-full rounded-ss-full text-white px-8 py-2 font-sans capitalize">read
+                                        more</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full mb-5 md:w-4/12 lg:w-3/12 mx-auto px-3"data-aos="zoom-in"data-aos-duration="800">
+                        <div class="border-4 border-[#A5886D] relative ">
+                            <div class="absolute w-full h-full -top-6 left-6">
+                                <div class="w-full h-full border-4 border-[#A5886D] z-[0]"></div>
+                            </div>
+                            <div class="absolute top-2 right-2 z-[2]">
+                                <div class="px-4 py-1 bg-[#A5886D] text-white">Events</div>
+                            </div>
+                            <div class="news_img">
+                                <img src="images/banner/news1.png" alt="img" class="z-[1] relative w-full">
+                            </div>
+                            <div class="new_content relative z-[1]">
+                                <div class="p-4 text-center bg-[#232323]">
+                                    <span class="text-white ">June 14, 2023</span>
+                                    <h4 class="text-[#C3AF9D] my-3 font-medium">Exploring the Artistry of Renaissance
+                                    </h4>
+                                    <button
+                                        class="bg-gradient-to-b from-[#6F4F37] to-[#AB9D91] rounded-ee-full rounded-ss-full text-white px-8 py-2 font-sans capitalize">Read
+                                        More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer -->
+    <footer class="pt-24 bg-cover bg-no-repeat" style="background-image: url('./images/footer/footer_bg.png');">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap gap-3 justify-around">
+                <div class="w-10/12 md:w-4/12">
+                    <div class="flex items-center  mb-16"data-aos="fade-down">
+                        <img src="images/footer/ph_map-pin-bold.png" alt="img">
+                        <h3 class="text-white ml-6"><a href="https://maps.app.goo.gl/QBswhKKgnFH2MdoB7">12 Rue de la Fontaine, Vannes, 56000, France</a> </h3>
+                    </div>
+                    <ul>
+                        <li class="text-[#A5886D] mb-5"data-aos="fade-right">Monday - Thursday: 9am – 10pm</li>
+                        <li class="text-[#A5886D] mb-5"data-aos="fade-right">Friday - Saturday: 10am – 11pm</li>
+                        <li class="text-[#A5886D] mb-5"data-aos="fade-right">Monday: 11am - 9pm</li>
+                    </ul>
+                </div>
+                <div class="w-10/12 md:w-3/12">
+                    <div class="flex items-center md:justify-center mb-16"data-aos="fade-down">
+                        <img src="images/footer/ph_phone-call-light.png" alt="img">
+                        <h3 class="text-white ml-6"><a href="tel:88490-94711">+91 88490-94711</a> </h3>
+                    </div>
+                    <div>
+                        <img src="images/footer/Logo.png" alt="img" class="md:mx-auto"data-aos="zoom-in">
+                    </div>
+                </div>
+                <div class="w-10/12 md:w-3/12">
+                    <div class="flex items-center mb-16"data-aos="fade-down">
+                        <img src="images/footer/ph_envelope-light.png" alt="img">
+                        <h3 class="text-white ml-6"><a href="mailto:">reservations@restaurant.com</a> </h3>
+                    </div>
+                    <div class="w-8/12">
+                        <div class="flex justify-around">
+                            <img src="images/footer/Vector.png" alt="img" class="mx-2"data-aos="fade-left">
+                            <img src="images/footer/Vector (1).png" alt="img" class="mx-2"data-aos="fade-left">
+                            <img src="images/footer/Vector (2).png" alt="img" class="mx-2"data-aos="fade-left">
+                            <img src="images/footer/Vector (3).png" alt="img" class="mx-2"data-aos="fade-left">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#181818] p-5">
+            <h3 class="text-center text-white">© 2024 <span class="text-[#a5886d]">Renaissance.</span> Developed by
+                <span class="text-[#a5886d]">Priya Patel</span> </h3>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                nav: false,
+                loop: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                }
+            })
+        })
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
